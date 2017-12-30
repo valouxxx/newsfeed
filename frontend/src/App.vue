@@ -1,54 +1,89 @@
+
 <template>
-  <div id="app">
-    <header>
-      <span>Vue.js PWA</span>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">CropChat</span>
+      </div>
     </header>
-    <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
-      <router-view></router-view>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">CropChat</span>
+      <nav class="mdl-navigation">
+        <router-link class="mdl-navigation__link" to="/" @click.native="hideMenu">Home</router-link>
+        <router-link class="mdl-navigation__link" to="/post" @click.native="hideMenu">Post a picture</router-link>
+        <router-link class="mdl-navigation__link" to="/coin" @click.native="hideMenu">Coin</router-link>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+
+      <!-- <div v-for="entity in this.entities">
+        {{ entity.name }}
+      </div> -->
+
+
+      <div class="page-content">
+        <router-view></router-view>
+      </div>
     </main>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  require('material-design-lite')
+  export default {
+    name: 'app',
+    data () {
+      return {
+        'entities': [] // this.entities
+        // [{'name': 'market'}, {'name': 'market2'}]
+      }
+    },
+    mounted () {
+      // this.$http.get('http://localhost:1337/entities').then((resp) => {
+      //   console.log('success', resp)
+      //   this.entities = resp.data
+      // }, (resp) => {
+      //   console.log('erreur', resp)
+      // })
+    }
+  }
 </script>
 
 <style>
-body {
-  margin: 0;
-}
+  @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+  @import url('https://code.getmdl.io/1.2.1/material.blue-red.min.css');
+  body {
+    margin: 0;
+  }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+  }
 
-main {
-  text-align: center;
-  margin-top: 40px;
-}
+  main {
+    text-align: center;
+    margin-top: 40px;
+  }
 
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
-  color: #ffffff;
-}
+  header {
+    margin: 0;
+    height: 56px;
+    padding: 0 16px 0 24px;
+    background-color: #35495E;
+    color: #ffffff;
+  }
 
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
-}
+  header span {
+    display: block;
+    position: relative;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: .02em;
+    font-weight: 400;
+    box-sizing: border-box;
+    padding-top: 16px;
+  }
 </style>
