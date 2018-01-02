@@ -1,7 +1,7 @@
 /**
- * Fb_pageController
+ * FbPostController
  *
- * @description :: Server-side logic for managing fb_pages
+ * @description :: Server-side logic for managing Fbposts
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 

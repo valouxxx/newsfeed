@@ -17,16 +17,21 @@ module.exports = {
       type: 'string',
       required: true,
       unique: true
+    },
+    fb_page:{
+      model : 'fbpage'
+    },
+    status: {
+      type: 'string',
+      defaultsTo: 'active'
     }
-  },
-  fb_page:{
-    model : 'fb_page'
-  },
-  linkedin:{
-    model: 'linkedin'
-  },
-  website:{
-    model: 'website'
+    // linkedin:{
+    //   model: 'linkedin'
+    // },
+    // website:{
+    //   model: 'website'
+    // },
   }
+
 };
 

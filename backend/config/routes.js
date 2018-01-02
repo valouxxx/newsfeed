@@ -46,7 +46,15 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-
+  /* COIN */
   'GET /coin' : 'CoinController.find',
+  'POST /coin' : 'CoinController.create',
+  'PUT /coin/:id' : 'CoinController.update',
+
+  /* FB PAGE */
+  'GET /fbpage' : 'FbPageController.find',
+  'GET /fbpage/:id' : 'FbPageController.getFbPage',
+  'GET /fbpage/search/:fbPageName' : 'FbPageController.searchOnFacebook',
+  'POST /fbpage/:fbPageUsername' : 'fbPageController.createPage'
 
 };

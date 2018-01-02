@@ -5,8 +5,13 @@ import App from './App'
 import VueResource from 'vue-resource'
 import router from './router'
 import local from './../config/local.js'
+import BootstrapVue from 'bootstrap-vue'
+
+require('semantic-ui-css/semantic.css')
 
 Vue.config.productionTip = false
+
+Vue.use(BootstrapVue)
 Vue.use(VueResource)
 Vue.prototype.local = local
 

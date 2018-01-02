@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f19c55a2-0216-4ca7-87b3-e1efb9334f96" name="mycrypto" url="http://vps1062.fr.ns.planethoster.net">
+        <fileTransfer host="vps1062.fr.ns.planethoster.net" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

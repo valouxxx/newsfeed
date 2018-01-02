@@ -3,18 +3,18 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">CropChat</span>
+        <span class="mdl-layout-title">Newsfeed</span>
       </div>
     </header>
     <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">CropChat</span>
+      <span class="mdl-layout-title">Newsfeed</span>
       <nav class="mdl-navigation">
         <router-link class="mdl-navigation__link" to="/" @click.native="hideMenu">Home</router-link>
-        <router-link class="mdl-navigation__link" to="/post" @click.native="hideMenu">Post a picture</router-link>
-        <router-link class="mdl-navigation__link" to="/coin" @click.native="hideMenu">Coin</router-link>
+        <router-link class="mdl-navigation__link" to="/facebookpages" @click.native="hideMenu">Fb Pages</router-link>
+        <router-link class="mdl-navigation__link" to="/coins" @click.native="hideMenu">Coins</router-link>
       </nav>
     </div>
-    <main class="mdl-layout__content">
+    <main class="">
 
       <!-- <div v-for="entity in this.entities">
         {{ entity.name }}
@@ -64,8 +64,8 @@
   }
 
   main {
-    text-align: center;
     margin-top: 40px;
+    padding-top: 20px;
   }
 
   header {
@@ -74,6 +74,10 @@
     padding: 0 16px 0 24px;
     background-color: #35495E;
     color: #ffffff;
+  }
+
+  .page-content{
+    padding : 20px;
   }
 
   header span {
