@@ -13,13 +13,19 @@ module.exports = {
       required: true,
       unique: true
     },
-    message: 'string',
+    // message: 'string',
     picture:'string',
+    attachments: 'json',
+    description: 'string',
     created_time: 'datetime',
     fb_page : {
       model : 'fbpage'
-    }
+    },
+    // source: 'string',
+    story: 'string',
+    likes: 'integer'
 
   }
 };
+//picture,attachments,description,created_time,message,source,story,likes
 

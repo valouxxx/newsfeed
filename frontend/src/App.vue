@@ -4,15 +4,16 @@
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <span class="mdl-layout-title">Newsfeed</span>
+        <nav class="mdl-navigation">
+          <router-link class="mdl-navigation__link" to="/" @click.native="hideMenu">Home</router-link>
+          <router-link class="mdl-navigation__link" to="/facebookpages" @click.native="hideMenu">Fb Pages</router-link>
+          <router-link class="mdl-navigation__link" to="/coins" @click.native="hideMenu">Coins</router-link>
+        </nav>
       </div>
     </header>
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Newsfeed</span>
-      <nav class="mdl-navigation">
-        <router-link class="mdl-navigation__link" to="/" @click.native="hideMenu">Home</router-link>
-        <router-link class="mdl-navigation__link" to="/facebookpages" @click.native="hideMenu">Fb Pages</router-link>
-        <router-link class="mdl-navigation__link" to="/coins" @click.native="hideMenu">Coins</router-link>
-      </nav>
+
     </div>
     <main class="">
 

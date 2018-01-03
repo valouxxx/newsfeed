@@ -55,6 +55,8 @@ module.exports.routes = {
   'GET /fbpage' : 'FbPageController.find',
   'GET /fbpage/:id' : 'FbPageController.getFbPage',
   'GET /fbpage/search/:fbPageName' : 'FbPageController.searchOnFacebook',
+  'GET /fbpage/:id/feed' : 'FbPageController.getFeed', // feed from facebook
+  'GET /fbpage/:id/posts' : 'FbPageController.getPosts', // posts from DB
   'POST /fbpage/:fbPageUsername' : 'fbPageController.createPage'
 
 };

@@ -10,15 +10,15 @@ module.exports = {
   getFbPage: async function (req, res) {
 
     let id = req.param ('id')
-    console.log('Fb Get page Ctl : id', id)
+    sails.log.info('FB GET PAGE :', id)
 
     let page = await this.findOnePage(id)
     // console.log ('Page : ', page)
 
-    let fb_resp = await facebookService.get(page.name)
+    // let fb_resp = await facebookService.getPage(page.name)
     // console.log('fb_resp', fb_resp)
 
-    return res.json(fb_resp)
+    return res.json(page)
 
 
   },
@@ -26,10 +26,26 @@ module.exports = {
   searchOnFacebook: async function (req, res) {
     let fbPageName = req.param ('fbPageName')
     sails.log.info('searchOnFacebook : ', fbPageName);
-    let fb_resp = await facebookService.get(fbPageName)
+    let fb_resp = await facebookService.getPage(fbPageName)
     // console.log('fb_resp', fb_resp)
 
     return res.json(fb_resp)
+  },
+
+  getFeed: async function (req, res) {
+    sails.log.info('GET FB FEED');
+    console.log(req.param('id'))
+    let feed = facebookService.getFeed(req.param('id'))
+    return res.json(feed)
+  },
+
+  getPosts: async function (req, res) {
+    sails.log.info('GET FB POSTS');
+    console.log(req.param('id'))
+    let posts = await FbPost.find({fb_page: req.param('id')})
+    console.log(posts)
+    console.log('$$$')
+    return res.json(posts)
   },
 
   /**
@@ -52,7 +68,7 @@ module.exports = {
     let fbPageUsername = req.param('fbPageUsername')
     sails.log.info('CREATE PAGE : ', fbPageUsername);
 
-    let fb_resp = await facebookService.get(fbPageUsername)
+    let fb_resp = await facebookService.getPage(fbPageUsername)
     sails.log.debug('Fb_resp', fb_resp.name)
 
     let data = {
